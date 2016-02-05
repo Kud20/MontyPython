@@ -27,8 +27,8 @@ public class MontyHall {
  		/**For each game call the updateStatistics function and oneGame*/
  		for(int i = 0; i < numberOfGames; i++)
  		{
- 			stats.updateStatistics(doors);
  			oneGame();
+ 			stats.updateStatistics(doors);
  		}/**If there is input in the commandLine, print out the statistics, if not, display dialog box asking for valid input*/
  		if(commandLine == true) {
 			System.out.println(stats.toString());
@@ -36,7 +36,7 @@ public class MontyHall {
 			JOptionPane.showMessageDialog (null,stats.toString(), "Enter a valid input: ", JOptionPane.INFORMATION_MESSAGE);
 		}
  		/**Print out statistics*/
- 		System.out.println(stats.toString());	
+ 		//System.out.println(stats.toString());	
 	}
 	/** 
      * Simulates one Monty Hall game.  

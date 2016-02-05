@@ -85,7 +85,6 @@ public class Statistics {
 		for(int i = 0;i < prizeDoors.length; i++)
 		{ 
 			winningDoors += "door "+ (i+1) +" : "+prizeDoors[i]+ " (" +(int)((100)*(float)prizeDoors[i]/(float)gamesPlayed)+"%)\n"; 
-	
 		}
 		
 		for(int i = 0;i < playerDoors.length; i++)

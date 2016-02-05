@@ -28,17 +28,13 @@ public class Door {
 		}
 	}
 	public void setPrize(){
-		if(prize == true ){
-			this.prize = true;
-		}
+		this.prize = true;
 	}
 	public boolean hasPrize(){
 		return this.prize;
 	}
 	public void choose(){
-		if (chosen == true){
-			this.chosen = true;
-		}
+		this.chosen = true;
 	}
 	public boolean isChosen(){
 		return this.chosen;
