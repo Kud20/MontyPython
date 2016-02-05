@@ -106,7 +106,7 @@ public class MontyHall {
 		}
 		//Run the game
 		//StudentInfo.main(args);
-		montyHall = new MontyHall();		
+		montyHall = new MontyHall();
 		montyHall.runGames(numberOfGames, commandLine);
 	}
 }

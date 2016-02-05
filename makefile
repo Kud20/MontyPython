@@ -11,5 +11,7 @@ run:
 	java MontyHall
 
 clean:
-	-rm demo.o
-	-rm demo
+	-rm MontyHall.class
+	-rm Door.class
+	-rm Statistics.class
+	-rm Results.csv
