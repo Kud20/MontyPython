@@ -7,13 +7,17 @@ public class MontyHall {
 	/**Declare variables
 	 * Use an array to hold the doors
 	 */
-	Door [] doors = new Door [3];
+	Door [] doors = new Door [10];
 	
 	public MontyHall(){
 		/**Initialize class variables*/
 		doors[0] = new Door('A');
 		doors[1]= new Door('B');
 		doors[2] = new Door('C');
+		for(int i = 0; i < doors.length; i++)
+		{
+			doors[i] = new Door('Z');
+		}
 	}
 	/** 
      * Runs a series of Monty Hall games and displays the resulting statistics in a 
@@ -50,6 +54,7 @@ public class MontyHall {
 		/**reset doors*/
 		for(int i =0;i<doors.length;i++)
 		{
+			//System.out.println(i);
 			doors[i].reset();
 		}
 		/**Sets a door for the prizeDoor*/
@@ -59,7 +64,7 @@ public class MontyHall {
 		Door playerDoor = pickADoor();
 		playerDoor.choose();
 		/**Sets a door for the hostDoor*/
-		Door hostDoor  = openOtherDoor(prizeDoor,playerDoor);
+		Door[] hostDoor  = openOtherDoor(prizeDoor,playerDoor);
 	}
 	/** 
      * Simulates a random selection of one of the three doors.
@@ -78,16 +83,31 @@ public class MontyHall {
      *   @param selectedDoor the door that was selected by the player
      *   @return the door opened
      */
-	private Door openOtherDoor(Door prizeDoor, Door selectedDoor) {
+	private Door[] openOtherDoor(Door prizeDoor, Door selectedDoor) {
+		
+		int sum = 0;
 		for(int i = 0; i < doors.length; i++)
 		{
+			if(doors[i].isChosen() || doors[i].hasPrize())
+			{
+				sum = sum + 1;
+			}
+		}
+		Door[] doorsToOpean = new Door[doors.length-sum];
+		sum = 0;
+		for(int i = 0; i < doors.length; i++)
+		{
+			if(sum >= doorsToOpean.length)
+			{
+				break;
+			}
 			if(!doors[i].isChosen() && !doors[i].hasPrize())
 			{
 				doors[i].open();
-				return doors[i];
+				doorsToOpean[sum++] = doors[i];
 			}
 		}
-		return null;
+		return doorsToOpean;
 	}
 	
 	/**Simulates one game of Monty Hall

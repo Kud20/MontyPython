@@ -21,10 +21,7 @@ public class Statistics {
   this.gamesPlayed = 0;
   this.switchStrategy = 0;
   this.stayStrategy = 0;
-  
-  
   /**Create an array for doors*/
-  //needs to be dynamically allocatted for the new arrays of n size ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   prizeDoors = new int [] {0,0,0};
   playerDoors = new int [] {0,0,0};
   hostDoors = new int [] {0,0,0};
