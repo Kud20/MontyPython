@@ -117,10 +117,10 @@ public class Statistics {
   String outputFile = 
   "Number of games"+","+gamesPlayed+","+"\n"+
   "Number of doors"+","+ 3 +","+"\n" +
-  "Win" +"," + "Loss"+
-  "Staying Strategy" + stayStrategy + "," + gamesPlayed - String.valueOf(stayStrategy) +
-  "Switching Strategy" + switchStrategy + "," + gamesPlayed - switchStrategy +
-  "Selected Doors" + "Winning Doors" + "Open Doors" +
+  "Win" +"," + "Loss"+","+
+  "Staying Strategy" + "," + stayStrategy + "," + (gamesPlayed - stayStrategy) + "," +"\n"+
+  "Switching Strategy" + "," + switchStrategy + "," + (gamesPlayed - switchStrategy) +","+"\n"+
+  "Selected Doors" + "Winning Doors" + "Open Doors" +","+"\n"+
   "Door 1" + playerDoors[0] + "," + prizeDoors[0] + "," + hostDoors[0];
   
   try
